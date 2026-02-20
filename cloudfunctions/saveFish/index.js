@@ -126,6 +126,16 @@ exports.main = async (event, context) => {
       return { code: 0, data: { likes: Math.max(fishRes.data.likes || 0, 0) }, message: '取消成功' }
     }
 
+    // ========== listMine: 获取当前用户自己的鱼 ==========
+    if (action === 'listMine') {
+      const res = await db.collection('fishes')
+        .where({ openid })
+        .orderBy('createdAt', 'desc')
+        .limit(50)
+        .get()
+      return { code: 0, data: res.data, message: '查询成功' }
+    }
+
     // ========== listMyLikes: 获取当前用户已赞的 fishId 列表 ==========
     if (action === 'listMyLikes') {
       const res = await db.collection('fish_likes')

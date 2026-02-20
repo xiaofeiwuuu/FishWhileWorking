@@ -26,24 +26,24 @@
           :class="{ active: activeCard === 0 }"
           @tap="activeCard = 0"
         >
-          <text>🎣 带薪摸鱼</text>
+          <text>📅 倒数日</text>
         </view>
         <view
           class="card-tab"
           :class="{ active: activeCard === 1 }"
           @tap="activeCard = 1"
         >
-          <text>📅 倒数日</text>
+          <text>🎣 带薪摸鱼</text>
         </view>
       </view>
       <view class="card-body">
-        <FishingCard v-if="activeCard === 0" :hourly-wage="hourlyWage" />
         <CountdownCard
-          v-if="activeCard === 1"
+          v-if="activeCard === 0"
           :rest-days="workSettings.restDays"
           :salary-type="workSettings.salaryType"
           :paydays="workSettings.paydays"
         />
+        <FishingCard v-if="activeCard === 1" :hourly-wage="hourlyWage" />
       </view>
     </view>
     <CustomTabBar :current="0" />
@@ -597,8 +597,8 @@ export default {
 .card-tab {
   flex: 1;
   text-align: center;
-  padding: 12rpx 0;
-  border-radius: 28rpx;
+  padding: 20rpx 0;
+  border-radius: 40rpx;
   font-size: 26rpx;
   color: #999;
   background: #f5f5f5;

@@ -1,0 +1,9 @@
+{
+  "name": "getHolidays",
+  "version": "1.0.0",
+  "description": "获取节假日数据（数据库缓存 + timor.tech API）",
+  "main": "index.js",
+  "dependencies": {
+    "wx-server-sdk": "~2.6.3"
+  }
+}
