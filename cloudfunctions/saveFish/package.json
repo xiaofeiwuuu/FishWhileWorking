@@ -1,0 +1,9 @@
+{
+  "name": "saveFish",
+  "version": "1.0.0",
+  "description": "保存用户绘制的鱼到数据库",
+  "main": "index.js",
+  "dependencies": {
+    "wx-server-sdk": "~2.6.3"
+  }
+}

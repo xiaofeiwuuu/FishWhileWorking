@@ -1,0 +1,9 @@
+{
+  "name": "syncFishRecords",
+  "version": "1.0.0",
+  "description": "摸鱼记录云同步（月度聚合）",
+  "main": "index.js",
+  "dependencies": {
+    "wx-server-sdk": "~2.6.3"
+  }
+}
